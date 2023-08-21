@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  hitEffect: {fileID: 2499678403023201050, guid: 517367ae400ad9544aec511ca82fd311, type: 3}
 --- !u!114 &1160030266687497195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1124051335
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a1f359b386111d4aac09b12110f924f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
