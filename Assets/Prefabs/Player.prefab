@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8316605188387897929}
   - component: {fileID: 5694468109590823110}
   - component: {fileID: 6796286241474084809}
+  - component: {fileID: 4836072760100888981}
   - component: {fileID: 2067303961}
   m_Layer: 8
   m_Name: Player
@@ -272,6 +273,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   hitEffect: {fileID: 2499678403023201050, guid: 517367ae400ad9544aec511ca82fd311, type: 3}
+--- !u!114 &4836072760100888981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297912573821791848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce605da2c797592459da129460aa2435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  isProjectile: 0
 --- !u!114 &2067303961
 MonoBehaviour:
   m_ObjectHideFlags: 0
