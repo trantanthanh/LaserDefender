@@ -15,7 +15,7 @@ TagManager:
   - Foreground
   - Player
   - Enemy
-  - 
+  - FarGround
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FarGround
+    uniqueID: 655785247
     locked: 0
   - name: Background
     uniqueID: 2815804689
