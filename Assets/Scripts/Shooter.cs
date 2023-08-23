@@ -16,7 +16,15 @@ public class Shooter : MonoBehaviour
     public bool useAI;
     Coroutine firingCoroutine;
 
+    AudioPlayer audioPlayer;
+
     [HideInInspector] public bool isFiring;
+
+    void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
+
     void Start()
     {
         if (useAI)
@@ -56,6 +64,10 @@ public class Shooter : MonoBehaviour
                 rb.velocity = transform.up * projectileSpeed;
             }
             Destroy(instance, projectileLifeTime);
+            if (!useAI)
+            {
+                audioPlayer.PlayShootingClip();
+            }
 
             float timeToNextFire = Random.Range(baseFiringRate - firingRateVariance, baseFiringRate + firingRateVariance);
             timeToNextFire = Mathf.Clamp(timeToNextFire, firingRateMinimum, float.MaxValue);
