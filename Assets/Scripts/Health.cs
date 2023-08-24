@@ -23,7 +23,11 @@ public class Health : MonoBehaviour
         }
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        scoreKeeper.ResetScore();
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
