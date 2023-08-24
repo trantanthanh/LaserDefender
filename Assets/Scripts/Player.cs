@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] float paddingRight = 0f;
     [SerializeField] float paddingTop = 0f;
     [SerializeField] float paddingBottom = 0f;
+    bool isMovingByMouse = false;
     Vector2 rawInput;
 
     Vector2 minBounds;//(0, 0)
@@ -58,10 +59,26 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            isMovingByMouse = true;
+        }
         Vector2 deltaMove = rawInput * moveSpeed * Time.deltaTime;
+        if (isMovingByMouse && Input.GetMouseButton(0))
+        {
+            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPosition.z = transform.position.z;
+            Vector3 moveDirection = (targetPosition - transform.position).normalized;
+            deltaMove = (Vector2)moveDirection * moveSpeed * Time.deltaTime;
+        }
         Vector2 newPos = new Vector2();
         newPos.x = Mathf.Clamp(transform.position.x + deltaMove.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
         newPos.y = Mathf.Clamp(transform.position.y + deltaMove.y, minBounds.y + paddingBottom, maxBounds.y - paddingTop);
         transform.position = newPos;
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isMovingByMouse = false;
+        }
     }
 }
