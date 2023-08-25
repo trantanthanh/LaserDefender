@@ -6,12 +6,13 @@ public class ScoreKeeper : MonoBehaviour
 {
     int score;
 
-    ScoreKeeper instance;
+    static ScoreKeeper instance;
 
     void Awake()
     {
         if (instance != null)
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
         else
