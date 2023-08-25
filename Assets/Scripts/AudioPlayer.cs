@@ -16,6 +16,31 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip deadClip;
     [SerializeField] [Range(0f, 1f)] float deadVoulume = 1f;
 
+    public static AudioPlayer instance;
+
+    public AudioPlayer GetInstance()
+    {
+        return instance;
+    }
+
+    void Awake()
+    {
+        ManageSingleton();
+    }
+
+    void ManageSingleton()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public void PlayShootingClip()
     {
         PlayClip(shootingClip, shootingVolume);
