@@ -62,14 +62,20 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isMovingByMouse = true;
+            shooter.isFiring = true;
         }
         Vector2 deltaMove = rawInput * moveSpeed * Time.deltaTime;
         if (isMovingByMouse && Input.GetMouseButton(0))
         {
             Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = transform.position.z;
-            Vector3 moveDirection = (targetPosition - transform.position).normalized;
-            deltaMove = (Vector2)moveDirection * moveSpeed * Time.deltaTime;
+            Vector2 moveDistance = (Vector2)(targetPosition - transform.position);
+            Vector2 moveDirection = moveDistance.normalized;
+            deltaMove = moveDirection * moveSpeed * Time.deltaTime;
+            if (deltaMove.magnitude > moveDistance.magnitude)
+            {
+                deltaMove = moveDistance;
+            }
         }
         Vector2 newPos = new Vector2();
         newPos.x = Mathf.Clamp(transform.position.x + deltaMove.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
@@ -79,6 +85,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             isMovingByMouse = false;
+            shooter.isFiring = false;
         }
     }
 }
