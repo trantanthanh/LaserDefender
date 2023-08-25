@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     AudioPlayer audioPlayer;
 
     ScoreKeeper scoreKeeper;
+    LevelManager levelManager;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
         }
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     public int GetHealth()
@@ -60,6 +62,10 @@ public class Health : MonoBehaviour
         if (!isPlayer)
         {
             scoreKeeper.ModifyScore(score);
+        }
+        else
+        {
+            levelManager.LoadGameOver();
         }
         PlayHitEffect();
         audioPlayer.PlayDeadClip();
