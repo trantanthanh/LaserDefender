@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         if (damageDealer != null)
         {
+            PlayHitEffect();
             TakeDamage(damageDealer.GetDamage());
             audioPlayer.PlayDamageClip();
             damageDealer.Hit();
@@ -67,7 +68,6 @@ public class Health : MonoBehaviour
         {
             levelManager.LoadGameOver();
         }
-        PlayHitEffect();
         audioPlayer.PlayDeadClip();
         Destroy(gameObject);
     }

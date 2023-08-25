@@ -6,6 +6,21 @@ public class ScoreKeeper : MonoBehaviour
 {
     int score;
 
+    ScoreKeeper instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public int GetScore()
     {
         return score;
