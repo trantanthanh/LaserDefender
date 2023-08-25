@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7580688758792442943, guid: 8902b796b3d10f14296c5edf04d9da69, type: 3}
+      propertyPath: score
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 561424505, guid: 8902b796b3d10f14296c5edf04d9da69, type: 3}
       propertyPath: waveConfig
       value: 

@@ -893,7 +893,15 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: aab1941c9bc25a445869893d8bf1dfaa, type: 2}
   - {fileID: 11400000, guid: 069919a01c97f674ab4cbe4d2db1efff, type: 2}
-  timeBetweenWaves: 1
+  - {fileID: 11400000, guid: 47291d7c29e880f4290ab2454a40477f, type: 2}
+  - {fileID: 11400000, guid: a116a1dbaf83f124386ca1b2c2c32430, type: 2}
+  - {fileID: 11400000, guid: 1b005af7b15379742a9ef54a008dd6e9, type: 2}
+  - {fileID: 11400000, guid: d2183377fbc600b42bf9fe06e3dca60f, type: 2}
+  - {fileID: 11400000, guid: 56829aac6f5436b458a75c5da50d8550, type: 2}
+  - {fileID: 11400000, guid: d2741a289714f524882577f58915c759, type: 2}
+  - {fileID: 11400000, guid: 145e6c957f8489a41b93e42f134847f9, type: 2}
+  - {fileID: 11400000, guid: 3329caf9a29c768459ac20ceff2e2413, type: 2}
+  timeBetweenWaves: 1.5
   isLoopWaves: 1
 --- !u!1 &1983574733
 GameObject:
